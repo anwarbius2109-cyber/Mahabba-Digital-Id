@@ -87,19 +87,23 @@ Saya mau pesan undangan
         <img src="${item.gambar}"
           class="w-full aspect-[3/4] sm:aspect-[4/5] object-cover transition duration-500 group-hover:scale-105">
 
-        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex flex-col sm:flex-row items-center justify-center gap-3 px-3">
+        <div class="p-3 flex gap-2">
 
-          <a href="${item.link}" target="_blank"
-class="w-full sm:w-auto text-center bg-white/95 px-4 py-2.5 rounded-xl text-sm font-semibold active:scale-95 transition">
-  Preview
-</a>
+  <a href="${item.link}" target="_blank"
+  class="flex-1 text-center bg-black text-white py-2.5 rounded-xl text-sm font-semibold active:scale-95 transition">
 
-<a href="${linkWA}" target="_blank"
-class="w-full sm:w-auto text-center bg-green-500 text-white px-4 py-2.5 rounded-xl text-sm font-semibold active:scale-95 transition">
-  Order
-</a>
+    Preview
 
-        </div>
+  </a>
+
+  <a href="${linkWA}" target="_blank"
+  class="flex-1 text-center bg-green-500 text-white py-2.5 rounded-xl text-sm font-semibold active:scale-95 transition">
+
+    Order
+
+  </a>
+
+</div>
 
       </div>
 
