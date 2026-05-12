@@ -12,6 +12,48 @@ fetch("data/katalog.json")
 
     tampilkan();
 
+    /* =========================
+       SEARCH FLEXIBLE
+    ========================= */
+
+    const searchInput = document.getElementById("search");
+
+    searchInput.addEventListener("input", function(){
+
+      const keyword = this.value.toLowerCase().trim();
+
+      halaman = 1;
+
+      // kalau kosong
+      if(keyword === ""){
+        dataAktif = semuaData;
+        tampilkan();
+        return;
+      }
+
+      // pecah kata
+      const kataCari = keyword.split(" ");
+
+      dataAktif = semuaData.filter(item => {
+
+        // gabungkan semua text
+        const gabung = `
+          ${item.nama || ""}
+          ${item.kategori || ""}
+          ${(item.keyword || []).join(" ")}
+        `.toLowerCase();
+
+        // flexible search
+        return kataCari.some(kata => 
+          gabung.includes(kata)
+        );
+
+      });
+
+      tampilkan();
+
+    });
+
   });
 
 function tampilkan(){
