@@ -269,11 +269,17 @@ fetch("data/porto.json")
 
     const porto = document.getElementById("portoList");
 
-    if (!porto) return;
+if (!porto) return;
 
-    const perPage = window.innerWidth < 768 ? 8 : 12;
-    let currentPage = 1;
-    const totalPages = Math.ceil(data.length / perPage);
+const prevBtn = document.getElementById("prevPorto");
+const nextBtn = document.getElementById("nextPorto");
+const pageInfo = document.getElementById("pageInfo");
+
+if (!prevBtn || !nextBtn || !pageInfo) return;
+
+const perPage = window.innerWidth < 768 ? 8 : 12;
+let currentPage = 1;
+const totalPages = Math.ceil(data.length / perPage);
 
     function renderPage(page) {
 
